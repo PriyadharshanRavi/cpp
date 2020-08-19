@@ -1,9 +1,15 @@
 #include <iostream>
+int cuberoot(int base);
 
 using namespace std;
 
 int main(){
-    int luckynums[]={1,2,11,19};
-    cout << luckynums[2];
+    cuberoot(5);
     return 0;
+}
+
+int cuberoot(int base){
+    int cuberoot = base * base * base;
+    cout << "the cube root of " << base << " is " << cuberoot << endl;
+    return cuberoot;
 }

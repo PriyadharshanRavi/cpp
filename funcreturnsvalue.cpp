@@ -13,5 +13,5 @@ int main(){
 }
 
 int dogage(int a){
-    return 7*a;
+    return 7*a; // when we type return the c++ jumps out of the program and wont execute lines after return in a particular fucntion
 }
