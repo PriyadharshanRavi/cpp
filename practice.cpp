@@ -1,26 +1,25 @@
-//exponential function
-
 #include <iostream>
-int expo(int base, int power);
 
 using namespace std;
 
 int main(){
-    expo(5,5);
-    return 0;
-}
-
-int expo(int base, int power){
-    cout << "enter the base number: ";
-    cin >> base;
-    cout << "enter the power number: ";
-    cin >> power;
-    int result = 1;
-    for (int i=0; i < power; i++)
+    int twod[3][2];
+    for (int i = 0; i < 3; i++)
     {
-        result = result * base;
+        for (int j = 0; j < 2; j++)
+        {
+            cin >> twod[i][j];
+        }
+        
     }
-    cout << "The answer is: " << result<<endl;
-    return result;
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            cout << twod[i][j];
+        }
+        cout<< endl;
+    }
+    
     
 }
