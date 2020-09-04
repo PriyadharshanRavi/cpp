@@ -2,32 +2,34 @@
 
 using namespace std;
 
-class Room{
-    public:
-        float length;
-        float breadth;
-        float height;
-    Room(float aLength, float aBreadth, float aHeight){
-        length = aLength;
-        breadth = aBreadth;
-        height = aHeight;
+class Movie{
+    private:
+        string rating;
+    public: 
+        string title;
+        string director;
+    Movie(string aTitle, string aDirector, string aRating){
+        title = aTitle;
+        director = aDirector;
     }    
-    float calculateArea(){
-        cout << "The Area is " << length*breadth << endl;
-        return 0;
+    void setRating(string aRating){
+        if(aRating == "G" || aRating == "P" || aRating == "PG-13" || aRating == "R" || aRating == "NR"){
+            rating = aRating;
+        }else{
+            rating = "NR";
+        }
+        
     }
-    float calculateVolume(){
-        cout << "The Volume is " << length*breadth*height << endl;
-        return 0;
+    string getRating(){
+        return rating;
     }
 };
 
 int main(){
-    Room room1(10,10,50);
-    Room room2(12.5,13.25,50);
-
-    room1.calculateArea();
-    room2.calculateVolume();
-
+    Movie mov1("Vada Chennai", "Vetri Maran" , "R");
+    mov1.setRating("Unwatchable");
+    
+    cout << mov1.getRating();
+ 
     return 0;
 }

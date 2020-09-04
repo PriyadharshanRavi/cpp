@@ -73,3 +73,35 @@ int main(){
 
     return 0;
 }*/
+
+/*
+#include <iostream>
+
+using namespace std;
+
+class Reportcard{
+    public:
+        int maths,science,tamil,english,social;
+    Reportcard(int aMaths, int aScience, int aTamil, int aEnglish, int aSocial){
+        maths = aMaths;
+        science = aScience;
+        tamil = aTamil;
+        english = aEnglish;
+        social = aSocial;
+    }    
+    int total(){
+        int sum = maths + science + tamil + english + social;
+        cout << "The total of all subjects is: " << sum << endl;
+        float percent = sum / 5;
+        cout << "... and secured " << percent << " %!" << endl;
+        return 0;
+    }
+};
+
+int main(){
+    Reportcard kaviya(90,98,88,95,87);
+    Reportcard priyan(93,97,92,96,98);
+    priyan.total();
+    kaviya.total();
+    return 0;
+}*/
