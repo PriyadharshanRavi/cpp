@@ -5,7 +5,7 @@ int main(){
     int a, result=0;
     cout << "enter the number" << endl;
     cin>> a;
-    for (int i = 0; i < ; i++)
+    for (int i = 0; i < 9; i++)
     {
         result = result + (a%10);
         a=a/10;
