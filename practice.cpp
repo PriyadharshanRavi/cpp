@@ -1,71 +1,61 @@
-//peak finding 2D 
+//merge sort nlogn
 
 #include <iostream>
 
 using namespace std;
 
 int main(){
-    int n,m;
-    cout << "enter the number of row: " ;
-    cin >> n;
-    cout << "enter the number of columns: ";
-    cin >> m;
-    int arr[n][m] = {};
-    cout << "enter the array: ";
-    for (int i = 0; i < n; i++)
+    int lprime[4]={1,3,5,7};
+    int rprime[4]={2,4,6,8};
+    int limit =3, l = 0, r = 0, ele, k;
+    int sorted[8];
+    cout << "L Prime: ";
+    for (int i = 0; i <=limit; i++)
     {
-        for (int j = 0; j < m; j++)
-        {
-            cin >> arr[i][j];
-        }
-        
+        cout << lprime[i]<<", ";
     }
-    cout << "the array you have entered is: ";
-    for (int i = 0; i < n; i++)
+    cout<<endl<< "R Prime: ";
+    for (int j = 0; j <=limit; j++)
     {
-        for (int j = 0; j < m; j++)
-        {
-            cout << arr[i][j]<< ", ";
-        }
-        cout << endl;
+        cout << rprime[j]<<", ";
     }
-    
-    //finding middle column
-
-    int mid = m/2;
-    int peak = arr[0][0];
-
-    for (int i = 0; i < n; i++)
+    cout<<endl << "sorted array: ";
+    for (k = 0; l<=limit && r <= limit; k++)
     {
-        for (int j = 0; j < mid; j++)
+        if (lprime[l] < rprime[r])
         {
-            if (peak < arr[i][j])
-            {
-                peak = arr[i][j];
-            }
-            
+            ele = lprime[l];
+            sorted[k] = ele;
+            l++;
+        }else{
+            ele = rprime[r];
+            sorted[k]=ele;
+            r++;
         }
-        
     }
-
-    cout << "at this point the peak is: " << peak<<endl;
-    
-    for (int i = 0; i < n; i++)
+    while (l<=limit)
     {
-        for (int j = mid; j < m; j++)
-        {
-            if (peak < arr[i][j])
-            {
-                peak = arr[i][j];
-            }
-            
-        }
-        
+        ele = lprime[l];
+        sorted[k]=ele;
+        l++;
+        k++;
+    }
+    while (r<=limit)
+    {
+        ele = rprime[r];
+        sorted[k] = ele;
+        r++;
+        k++;
     }
 
-    cout << "at the end the peak is: " << peak<<endl;
+    for (int n = 0; n < 8; n++)
+    {
+        cout << sorted[n] << ", ";
+    }
     
-
     
-    return 0;
+    
+    
+    
+    return 0;    
 }
